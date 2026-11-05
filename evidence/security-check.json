@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "gitleaks_version": "8.24.2",
+  "gitleaks_findings": 0,
+  "known_secret_check": {
+    "result": "PASS",
+    "files": 40,
+    "known_secret_matches": 0,
+    "scope": "Actual sandbox credentials, isolated DB password, merchant key and purchase capability compared in memory against source-only candidate and built browser assets; no values logged"
+  },
+  "source_urls_and_fragments": "PASS: no internal service URL or purchase capability fragment found",
+  "effective_isc_clearance": "PENDING; draft only"
+}

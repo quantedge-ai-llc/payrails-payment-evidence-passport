@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "mode": "loopback API with real sandbox read-back and isolated PostgreSQL",
+  "missing_merchant_key": 401,
+  "missing_capability": 404,
+  "wrong_capability": 404,
+  "authorized_read": 200,
+  "payment_stage": "COMPLETED",
+  "reference": "MATCHED",
+  "descriptor_only": "NOT VERIFIED",
+  "cross_origin": 403,
+  "invalid_create": 400,
+  "http_capture_route": 404,
+  "explanation": "deterministic_fallback"
+}

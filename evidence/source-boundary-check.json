@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "internal_service_url_files": [],
+  "purchase_capability_fragment_files": [],
+  "identical_files_from_prior_export": [
+    {
+      "new": "LICENSE.proposed",
+      "old": "LICENSE"
+    }
+  ],
+  "identical_license_note": "Only the standard proposed ISC boilerplate is byte-identical; no product implementation is copied.",
+  "scope": "source candidate only; installed dependencies/build output excluded"
+}

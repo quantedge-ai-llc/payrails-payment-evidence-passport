@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "database": "disposable postgres:14; networking disabled",
+  "schema": [
+    "passport",
+    "sandbox_order"
+  ],
+  "migration_replay": "PASS",
+  "concurrent_reservations": "one winner; duplicate cannot change digest",
+  "transaction_rollback": "PASS",
+  "product_schema_present": false
+}
