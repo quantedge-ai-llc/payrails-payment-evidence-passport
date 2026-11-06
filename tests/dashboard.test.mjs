@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {dashboardRows} from '../web/dashboard.mjs';
+test('dashboard is only existing redacted evidence with no capability or invented transactions',async()=>{const evidence=JSON.parse(await readFile(new URL('../evidence/provider-readback.json',import.meta.url)));assert.equal(dashboardRows.length,1);assert.equal(dashboardRows[0].reference,evidence.redacted_order);assert.equal(dashboardRows[0].status,evidence.provider_stage);assert.equal(dashboardRows[0].passport,'#passport');assert.doesNotMatch(JSON.stringify(dashboardRows),/capability|[a-f0-9]{64}/);});
+test('grid uses Community modules, read-only columns, filtering/sorting and a safe Passport link',async()=>{const src=await readFile(new URL('../web/Dashboard.jsx',import.meta.url),'utf8');assert.match(src,/AllCommunityModule/);assert.match(src,/sortable:true,filter:true/);assert.match(src,/quickFilterText/);assert.match(src,/href="#passport"/);assert.doesNotMatch(src,/ag-grid-enterprise|LicenseManager|editable:true|AG Studio/);const pkg=JSON.parse(await readFile(new URL('../package.json',import.meta.url)));assert.ok(pkg.dependencies['ag-grid-react']);assert.ok(pkg.dependencies['ag-grid-community']);assert.ok(!Object.keys(pkg.dependencies).some(k=>/enterprise|studio/i.test(k)));});

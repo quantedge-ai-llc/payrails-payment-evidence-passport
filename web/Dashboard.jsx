@@ -1,0 +1,8 @@
+import React,{useState} from 'react';
+import {AgGridReact} from 'ag-grid-react';
+import {AllCommunityModule,ModuleRegistry,themeQuartz} from 'ag-grid-community';
+import {dashboardRows} from './dashboard.mjs';
+ModuleRegistry.registerModules([AllCommunityModule]);
+const theme=themeQuartz.withParams({backgroundColor:'#13243b',foregroundColor:'#e9f0fa',headerBackgroundColor:'#081426',headerTextColor:'#e9f0fa',borderColor:'#7890ae',accentColor:'#b9d8ff',colorScheme:'dark'});
+const columns=[{field:'reference',headerName:'Redacted order'},{field:'status',cellRenderer:p=><span className="status-badge">{p.value}</span>},{field:'source',minWidth:230},{field:'merchant',minWidth:240},{field:'correlation',headerName:'Reference check'},{field:'descriptor',headerName:'Descriptor only'},{field:'checkedAt',headerName:'Recorded at',minWidth:240},{headerName:'Passport',filter:false,sortable:false,cellRenderer:()=> <a href="#passport">Open private Passport form</a>,minWidth:240}];
+export function Dashboard(){const [filter,setFilter]=useState('');return <section aria-labelledby="dashboard-heading"><h2 id="dashboard-heading">Transaction Evidence Dashboard</h2><p>Read-only, redacted recorded sandbox evidence — not a live transaction feed. Merchant/product information is synthetic. No purchase capability is included.</p><label>Filter evidence<input value={filter} onChange={e=>setFilter(e.target.value)}/></label><div className="evidence-grid"><AgGridReact theme={theme} rowData={dashboardRows} columnDefs={columns} defaultColDef={{sortable:true,filter:true,resizable:true,minWidth:170}} quickFilterText={filter} getRowId={p=>p.data.reference}/></div></section>;}

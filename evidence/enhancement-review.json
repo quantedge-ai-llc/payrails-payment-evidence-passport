@@ -1,0 +1,39 @@
+{
+  "result": "PASS",
+  "scope": "AG Grid Community dashboard and optional Gemini evidence explanation enhancements on the independent public repository baseline",
+  "repository": "quantedge-ai-llc/payrails-payment-evidence-passport",
+  "branch": "main",
+  "published_base": "dfc25468eb09932571ca1f8a86db2dbe5611aef4",
+  "tests": {
+    "passed": 37,
+    "failed": 0
+  },
+  "build": "PASS; bundle-size warning only",
+  "diff_check": "PASS",
+  "ag_grid": {
+    "packages": [
+      "ag-grid-community@36.3.0",
+      "ag-grid-react@36.3.0"
+    ],
+    "license": "MIT",
+    "community_only": true,
+    "installed_license_texts_in_notices": true
+  },
+  "secret_review": {
+    "source_files_scanned": 44,
+    "browser_assets_scanned": 3,
+    "known_environment_secret_matches": 0,
+    "credential_or_literal_capability_pattern_matches": 0,
+    "env_ignored_and_untracked": true,
+    "method": "In-memory comparison with configured secret-like environment values plus credential, private-key and literal 64-hex capability patterns; no matched text logged. This is a bounded scan, not a proof about all possible unknown secrets."
+  },
+  "source_boundary": {
+    "payment_service_matching_provider_database_schema_unchanged": true,
+    "independent_baseline_history_preserved": true,
+    "original_product_source_imports": false,
+    "private_repository_accessed": false,
+    "basis": "Reviewed full changed/new file set against the independent public baseline and existing source-boundary record; no fresh comparison against private product source."
+  },
+  "live_ai_record": "evidence/gemini-live-check.json; observed successful synthetic-fixture call, not re-invoked during publication checks",
+  "license_scope": "Existing proposed first-party license files left unchanged; third-party MIT notices retained."
+}

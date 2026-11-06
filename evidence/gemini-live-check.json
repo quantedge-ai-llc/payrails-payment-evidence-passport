@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "basis": "Observed real invocation in this verification session; this record contains safe assertions only, not a raw provider transcript.",
+  "model": "gemini-3.1-flash-lite",
+  "provider_generation_calls": 1,
+  "provider_http": 200,
+  "endpoint_http": 200,
+  "source": "gemini_assisted_composition",
+  "ai_generated": true,
+  "live_ai_execution": "VERIFIED THIS REQUEST",
+  "fixture": {
+    "environment": "paypal_sandbox",
+    "payment_stage": "COMPLETED",
+    "synthetic_merchant": true,
+    "live_funds": false,
+    "correlation": "NOT VERIFIED"
+  },
+  "structured_grounded_output": "PASS: four unique schema-validated section IDs mapped to the four fixed evidence-grounded sentences",
+  "deterministic_status_before": "NOT VERIFIED",
+  "deterministic_status_after": "NOT VERIFIED",
+  "payment_verification_rules": "Unchanged; explicit-reference MATCHED and descriptor-only NOT VERIFIED covered by offline tests.",
+  "quota_restriction_observed": false,
+  "billing_restriction_observed": false,
+  "limitations": "One synthetic-fixture explanation through the authenticated existing HTTP route with an injected fixture service. No real receipt capability or PayPal refresh used; no new payment, capture, bank-statement verification, deployment or guarantee of future model availability.",
+  "redaction": "Only stage, deterministic correlation and disclosure flags sent; no credentials, purchase identifiers, capabilities, merchant text or raw provider response recorded."
+}
